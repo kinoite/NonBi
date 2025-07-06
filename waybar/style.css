@@ -1,0 +1,99 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, sans-serif;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#mpd {
+    padding: 3px 14px;
+    margin: 5px 4px;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    background-color: #292929; 
+    color: #ffffff;            
+    border: 3px solid transparent; 
+    border-image: linear-gradient(to bottom right, #fcf434, #ffffff, #9c59d1, #292929) 1;
+}
+
+#workspaces {
+    background-color: #292929;
+    margin: 5px;
+    padding: 0 5px;
+    border-radius: 10px; 
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: 3px solid transparent;
+    border-image: linear-gradient(to bottom right, #fcf434, #ffffff, #9c59d1, #292929) 1;
+}
+
+#workspaces button {
+    background-color: transparent;
+    color: #ffffff;
+    margin: 2px 1px;
+    padding: 2px 8px;
+    border-radius: 8px; 
+}
+
+#workspaces button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: rgba(156, 89, 209, 0.5); 
+}
+
+#workspaces button.urgent {
+    background-color: #fcf434;
+    color: #292929;
+}
+
+@keyframes blink {
+    to {
+        background-color: #f53c3c;
+        color: #ffffff;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    border-image: none; 
+    border: 3px solid #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#network.disconnected,
+#temperature.critical {
+    background-color: #f53c3c;
+    border-image: none;
+    border: 3px solid #f53c3c;
+}
+
+#pulseaudio.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+    border-image: none;
+    border: 3px solid #90b1b1;
+}
