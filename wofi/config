@@ -1,0 +1,11 @@
+mode=drun
+allow_images=true
+allow_markup=true
+width=600
+height=400
+border=0
+layer=overlay
+hide_scroll=true
+style=style.css
+show_icons=true
+icon_theme=Breeze-Dark
